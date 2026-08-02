@@ -1,0 +1,4 @@
+/vendor/
+.env.php
+/var/lib/database.sqlite
+.phpunit.cache
