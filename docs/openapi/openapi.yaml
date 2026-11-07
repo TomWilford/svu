@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info:
+  title: svu
+  description: svu
+  version: 1.0.0
+servers:
+  - url: 'https://localhost:8080'
+paths:
+  /ping:
+    get:
+      description: Validate that the service is up and running
+      responses:
+        '200':
+          description: Service is up and running
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      success:
+                        type: string
+                        example: "true"
+                      timestamp:
+                        type: string
+                        format: date-time

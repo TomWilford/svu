@@ -20,10 +20,10 @@ use Slim\Views\TwigMiddleware;
 use Tuupola\Middleware\HttpBasicAuthentication;
 
 return [
-    'settings' => fn() => require dirname(__DIR__) . '/app/settings.php',
+    'settings' => fn () => require dirname(__DIR__) . '/app/settings.php',
 
     App::class => function (ContainerInterface $container) {
-        $app = \Slim\Factory\AppFactory::createFromContainer($container);
+        $app = Slim\Factory\AppFactory::createFromContainer($container);
         (require dirname(__DIR__) . '/app/routes.php')($app);
         (require dirname(__DIR__) . '/app/middleware.php')($app);
 
@@ -84,5 +84,4 @@ return [
 
         return DriverManager::getConnection($connectionParams);
     },
-
 ];

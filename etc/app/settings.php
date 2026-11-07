@@ -8,7 +8,7 @@ $settings = require dirname(__DIR__) . '/app/settings.default.php';
 
 $configFiles = [
     dirname(__DIR__) . sprintf('/app/conf.d/settings.%s.php', $env),
-    dirname(__DIR__, 2) . '/.env.php'
+    dirname(__DIR__, 2) . '/.env.php',
 ];
 
 foreach ($configFiles as $config) {

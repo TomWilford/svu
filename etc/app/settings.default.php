@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Sqids\Sqids;
-
 error_reporting(0);
 ini_set('display_errors', '0');
 ini_set('display_startup_errors', '0');
@@ -31,7 +29,7 @@ $settings['doctrine']['migrations'] = [
         'execution_time_column_name' => 'execution_time',
     ],
     'migrations_paths' => [
-        'App\Database\Migrations' => dirname(__DIR__, 2) . '/src/Database/Migrations',
+        'App\Infrastructure\Database\Migrations' => dirname(__DIR__, 2) . '/src/Infastructure/Database/Migrations',
     ],
     'all_or_nothing' => true,
     'transactional' => true,
@@ -42,7 +40,7 @@ $settings['doctrine']['migrations'] = [
 ];
 
 $settings['twig']['template_path'] = [
-    dirname(__DIR__, 2) . '/usr/share/views'
+    dirname(__DIR__, 2) . '/usr/share/views',
 ];
 $settings['twig']['settings'] = [
     'cache' => dirname(__DIR__, 2) . '/var/cache/twig',
@@ -54,12 +52,6 @@ $settings['basic_auth'] = [
     'realm' => 'Protected',
     'secure' => true,
     'relaxed' => ['localhost'],
-];
-
-$settings['sqids'] = [
-    'alphabet' => Sqids::DEFAULT_ALPHABET,
-    'minLength' => Sqids::DEFAULT_MIN_LENGTH,
-    'blockList' => Sqids::DEFAULT_BLOCKLIST,
 ];
 
 return $settings;
